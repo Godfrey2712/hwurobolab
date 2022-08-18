@@ -1,0 +1,13 @@
+<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="arduino" xmlversion="3.1" description="" tags="">
+    <instance x="138" y="88">
+        <block type="robConf_led" id="1" intask="true">
+            <field name="NAME">L</field>
+            <field name="INPUT">LED_BUILTIN</field>
+        </block>
+    </instance>
+    <instance x="250" y="250">
+        <block type="robConf_robot" id="robot" intask="false" deletable="false">
+            <field name="ROBOT">undefined</field>
+        </block>
+    </instance>
+</block_set>

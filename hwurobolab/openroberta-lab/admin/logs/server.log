@@ -1,0 +1,2 @@
+Error: Could not find or load main class de.fhg.iais.roberta.main.ServerStarter
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.ServerStarter

@@ -1,0 +1,11 @@
+de/fhg/iais/roberta/usedhardwarecheck/EV3ProgramUsedHardwareCheckTest.class
+de/fhg/iais/roberta/Ev3LejosAstTest.class
+de/fhg/iais/roberta/components/ev3c4ev3/RbfBuilderTest.class
+de/fhg/iais/roberta/usedhardwarecheck/ProgramConfigurationCompatabilityTest.class
+de/fhg/iais/roberta/components/ev3c4ev3/ResourceUtils.class
+de/fhg/iais/roberta/factory/generic/IndexLocationTest.class
+de/fhg/iais/roberta/Ev3AstTest.class
+de/fhg/iais/roberta/Ev3C4ev3AstTest.class
+de/fhg/iais/roberta/factory/generic/RobotModeFactoryTest.class
+de/fhg/iais/roberta/Ev3DevAstTest.class
+de/fhg/iais/roberta/components/ev3c4ev3/Uf2FileContainerTest.class

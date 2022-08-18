@@ -1,0 +1,411 @@
+2022-06-07 23:56:46,317 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.iais.roberta.main.Administration - *** create-empty-db ***
+2022-06-07 23:56:46,388 [main] session-id=[] user-id=[] robot-name=[] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.dom4j.io.SAXContentHandler (file:/home/godfrey2712/openroberta-lab/OpenRobertaServer/target/resources/dom4j-1.6.1.jar) to method com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$LocatorProxy.getEncoding()
+WARNING: Please consider reporting this to the maintainers of org.dom4j.io.SAXContentHandler
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 07, 2022 11:56:46 PM com.mchange.v2.log.MLog <clinit>
+INFO: MLog clients using java 1.4+ standard logging.
+Jun 07, 2022 11:56:46 PM com.mchange.v2.c3p0.C3P0Registry banner
+INFO: Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+Jun 07, 2022 11:56:46 PM com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource getPoolManager
+INFO: Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@45a9fdc9 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@4ad80be7 [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> true, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kfsxaphv4dwg1lp58s1|436c81a3, idleConnectionTestPeriod -> 300, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 700, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 200, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@2a62cd34 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kfsxaphv4dwg1lp58s1|97e93f1, jdbcUrl -> jdbc:hsqldb:file:./OpenRobertaServer/db-embedded/openroberta-db, properties -> {password=******, autocommit=false, user=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 1, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kfsxaphv4dwg1lp58s1|6cc558c6, numHelperThreads -> 3 ]
+Jun 07, 2022 11:56:47 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Checkpoint start
+Jun 07, 2022 11:56:47 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose start
+Jun 07, 2022 11:56:47 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose synched
+Jun 07, 2022 11:56:47 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose script done
+Jun 07, 2022 11:56:47 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose end
+Jun 07, 2022 11:56:47 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Checkpoint end - txts: 1
+2022-06-07 23:56:47,946 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.i.r.p.util.SessionFactoryWrapper - session factory successfully created for dbUrl: jdbc:hsqldb:file:./OpenRobertaServer/db-embedded/openroberta-db - now checking database upgrade
+2022-06-07 23:56:48,049 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 0
+2022-06-07 23:56:48,051 [main] session-id=[] user-id=[] robot-name=[] ERROR d.f.i.r.persistence.util.DbUpgrader - no error: a new, empty db is being created. No upgrades, of course
+2022-06-07 23:56:48,058 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 0
+2022-06-07 23:56:48,059 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: SET DATABASE TRANSACTION CONTROL MVCC
+2022-06-07 23:56:48,066 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,066 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: SET DATABASE SQL UNIQUE NULLS FALSE
+2022-06-07 23:56:48,067 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,068 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table USER ( 
+ID INTEGER not null, 
+USERGROUP_ID INTEGER, 
+ACCOUNT varchar(255) not null, 
+PASSWORD  varchar(255) not null, 
+EMAIL varchar(255), 
+ROLE varchar(32) not null, 
+CREATED timestamp not null, 
+LAST_LOGIN timestamp not null, 
+TAGS varchar(16M), -- e.g. HERDER-GYMNASIUM KÖLN Q1 ED_SHEERAN 
+USER_NAME varchar(255), 
+YOUNGER_THAN_14 boolean default false not null, 
+ACTIVATED boolean default false not null, 
+primary key (ID) 
+)
+2022-06-07 23:56:48,072 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,072 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table LOST_PASSWORD ( 
+ID INTEGER not null, 
+USER_ID INTEGER not null, 
+URL_POSTFIX varchar(255), 
+CREATED timestamp not null, 
+primary key (ID) 
+)
+2022-06-07 23:56:48,075 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,075 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table PENDING_EMAIL_CONFIRMATIONS ( 
+ID INTEGER not null, 
+USER_ID INTEGER not null, 
+URL_POSTFIX varchar(255), 
+CREATED timestamp not null, 
+primary key (ID) 
+)
+2022-06-07 23:56:48,077 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,077 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table ROBOT ( 
+ID INTEGER not null, 
+NAME varchar(255) not null, 
+CREATED timestamp not null, 
+TAGS varchar(16M), 
+ICON_NUMBER integer not null, 
+primary key (ID), 
+)
+2022-06-07 23:56:48,079 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,079 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table PROGRAM ( 
+ID INTEGER not null, 
+NAME varchar(255) not null, 
+OWNER_ID INTEGER not null, 
+AUTHOR_ID INTEGER not null, 
+ROBOT_ID INTEGER not null, 
+PROGRAM_TEXT varchar(16M), 
+CONFIG_NAME varchar(255), 
+CONFIG_HASH varchar(255), 
+CREATED timestamp not null, 
+LAST_CHANGED timestamp not null, 
+LAST_CHECKED timestamp, 
+LAST_ERRORFREE timestamp, 
+VIEWED INTEGER, 
+TAGS varchar(16M), -- e.g. CAR AUTONOMOUS COOL 3WHEELS 
+ICON_NUMBER integer not null, 
+primary key (ID) 
+)
+2022-06-07 23:56:48,082 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,083 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table USER_PROGRAM ( 
+ID INTEGER not null, 
+USER_ID INTEGER not null, 
+PROGRAM_ID INTEGER not null, 
+RELATION varchar(32) not null -- 1 READ access, 2 WRITE access, 4 DELETE right, (really? not yet used) 8 PROMOTE_READ right, 16 PROMOTE_WRITE right 
+)
+2022-06-07 23:56:48,085 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,085 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table USER_PROGRAM_LIKE ( 
+ID INTEGER not null, 
+USER_ID INTEGER not null, 
+PROGRAM_ID INTEGER not null, 
+CREATED timestamp not null, 
+MARK varchar(16M), 
+COMMENT varchar(16M) 
+)
+2022-06-07 23:56:48,087 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,087 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table CONFIGURATION ( 
+ID INTEGER not null, 
+NAME varchar(255) not null, 
+OWNER_ID INTEGER, 
+ROBOT_ID INTEGER not null, 
+CONFIGURATION_HASH varchar(255), 
+CREATED timestamp not null, 
+LAST_CHANGED timestamp not null, 
+LAST_CHECKED timestamp, 
+LAST_ERRORFREE timestamp, 
+TAGS varchar(16M), -- e.g. CAR AUTONOMOUS COOL 3WHEELS 
+ICON_NUMBER integer not null, 
+primary key (ID) 
+)
+2022-06-07 23:56:48,090 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,090 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table CONFIGURATION_DATA ( 
+CONFIGURATION_HASH varchar(255) not null, 
+CONFIGURATION_TEXT varchar(16M) not null, 
+primary key (CONFIGURATION_HASH) 
+)
+2022-06-07 23:56:48,092 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,092 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table USERGROUP ( 
+ID INTEGER not null, 
+NAME varchar(255) not null, 
+OWNER_ID INTEGER not null, 
+ACCESS_RIGHT varchar(32) not null, 
+CREATED timestamp not null, 
+primary key (ID) 
+)
+2022-06-07 23:56:48,094 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,094 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create cached table USERGROUP_PROGRAM ( 
+ID INTEGER not null, 
+USERGROUP_ID INTEGER not null, 
+PROGRAM_ID INTEGER not null, 
+RELATION varchar(32) not null, -- [READ | WRITE] 
+primary key (ID) 
+)
+2022-06-07 23:56:48,096 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,096 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,098 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,099 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.i.r.persistence.util.DbExecutor - 14 SQL-statements executed
+2022-06-07 23:56:48,099 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USER add foreign key (USERGROUP_ID) references USERGROUP(ID) ON DELETE CASCADE
+Jun 07, 2022 11:56:48 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache open start
+Jun 07, 2022 11:56:48 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache open end
+2022-06-07 23:56:48,211 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,211 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create unique index usergroupAccountIdx on USER(USERGROUP_ID, ACCOUNT)
+2022-06-07 23:56:48,212 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,213 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create index userEmailIdx on USER(EMAIL)
+2022-06-07 23:56:48,214 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,214 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,215 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,215 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table LOST_PASSWORD               add foreign key (USER_ID) references USER(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,223 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,224 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table PENDING_EMAIL_CONFIRMATIONS add foreign key (USER_ID) references USER(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,233 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,233 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create unique index typeIdx on ROBOT(NAME)
+2022-06-07 23:56:48,234 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,235 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,236 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,236 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table PROGRAM add foreign key (OWNER_ID)  references USER(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,239 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,239 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table PROGRAM add foreign key (ROBOT_ID)  references ROBOT(ID)
+2022-06-07 23:56:48,242 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,243 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table PROGRAM add foreign key (AUTHOR_ID) references USER(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,245 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,246 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,246 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,246 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create unique index progNameOwnerRobotIdx on PROGRAM(NAME, OWNER_ID, ROBOT_ID, AUTHOR_ID)
+2022-06-07 23:56:48,247 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,248 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,248 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,248 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USER_PROGRAM       add foreign key (USER_ID)    references USER(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,250 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,251 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USER_PROGRAM       add foreign key (PROGRAM_ID) references PROGRAM(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,253 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,253 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USER_PROGRAM_LIKE  add foreign key (USER_ID)    references USER(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,255 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,255 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USER_PROGRAM_LIKE  add foreign key (PROGRAM_ID) references PROGRAM(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,258 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,258 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create unique index userProgramLikeIdx on USER_PROGRAM_LIKE(USER_ID, PROGRAM_ID)
+2022-06-07 23:56:48,259 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,260 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,260 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,261 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table CONFIGURATION add foreign key (OWNER_ID) references USER(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,263 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,263 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table CONFIGURATION add foreign key (ROBOT_ID) references ROBOT(ID)
+2022-06-07 23:56:48,267 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,267 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,268 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,268 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USERGROUP add foreign key (OWNER_ID) references USER(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,270 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,270 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create unique index usergroupOwnerNameIdx on USERGROUP(OWNER_ID, NAME)
+2022-06-07 23:56:48,271 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,271 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,272 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,272 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USERGROUP_PROGRAM add foreign key (USERGROUP_ID) references USERGROUP(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,277 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,277 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USERGROUP_PROGRAM add foreign key (PROGRAM_ID) references PROGRAM(ID) ON DELETE CASCADE
+2022-06-07 23:56:48,280 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,280 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: create unique index usergroupProgramIdx on USERGROUP_PROGRAM(USERGROUP_ID, PROGRAM_ID)
+2022-06-07 23:56:48,281 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,281 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,281 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,282 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USER                        alter column ID generated by default as identity (start with 1)
+2022-06-07 23:56:48,283 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,283 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table LOST_PASSWORD               alter column ID generated by default as identity (start with 1)
+2022-06-07 23:56:48,284 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,284 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table PENDING_EMAIL_CONFIRMATIONS alter column ID generated by default as identity (start with 1)
+2022-06-07 23:56:48,287 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,287 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table ROBOT                       alter column ID generated by default as identity (start with 42)
+2022-06-07 23:56:48,288 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,288 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table PROGRAM                     alter column ID generated by default as identity (start with 42)
+2022-06-07 23:56:48,288 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,289 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USER_PROGRAM                alter column ID generated by default as identity (start with 42)
+2022-06-07 23:56:48,291 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,292 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USER_PROGRAM_LIKE           alter column ID generated by default as identity (start with 42)
+2022-06-07 23:56:48,293 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,293 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table CONFIGURATION               alter column ID generated by default as identity (start with 42)
+2022-06-07 23:56:48,294 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,294 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USERGROUP                   alter column ID generated by default as identity (start with 93)
+2022-06-07 23:56:48,295 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,295 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - DDL: alter table USERGROUP_PROGRAM           alter column ID generated by default as identity (start with 93)
+2022-06-07 23:56:48,295 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected (probably 0): 0
+2022-06-07 23:56:48,296 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,296 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,296 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.i.r.persistence.util.DbExecutor - 41 SQL-statements executed
+2022-06-07 23:56:48,297 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: insert into ROBOT 
+( NAME, CREATED, TAGS, ICON_NUMBER ) 
+values('ev3', 
+now, 
+'', 0 
+)
+2022-06-07 23:56:48,300 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 1
+2022-06-07 23:56:48,300 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,301 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,301 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: insert into USER 
+(USERGROUP_ID, ACCOUNT, PASSWORD, EMAIL, ROLE, CREATED, LAST_LOGIN, TAGS, USER_NAME) 
+values (null, 'Roberta','f17a0084220e822e:313c4eda282166163f78cd0b13da3b66f5ed6a0e','','TEACHER',now ,now ,'','Roberta Roboter' 
+)
+2022-06-07 23:56:48,302 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 1
+2022-06-07 23:56:48,302 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,303 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,303 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: insert into USER 
+(USERGROUP_ID, ACCOUNT, PASSWORD, EMAIL, ROLE, CREATED, LAST_LOGIN, TAGS, USER_NAME) 
+values (null, 'Gallery','f17a0084220e822e:313c4eda282166163f78cd0b13da3b66f5ed6a0e','','TEACHER',now ,now ,'','The Gallery' 
+)
+2022-06-07 23:56:48,305 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 1
+2022-06-07 23:56:48,305 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,306 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,306 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: insert into USER 
+(USERGROUP_ID, ACCOUNT, PASSWORD, EMAIL, ROLE, CREATED, LAST_LOGIN, TAGS, USER_NAME) 
+values (null, 'testUser','f17a0084220e822e:313c4eda282166163f78cd0b13da3b66f5ed6a0e','','TEACHER',now ,now ,'','Test User' 
+)
+2022-06-07 23:56:48,308 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 1
+2022-06-07 23:56:48,308 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,309 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,309 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: insert into PROGRAM 
+( NAME, OWNER_ID, ROBOT_ID, AUTHOR_ID, PROGRAM_TEXT, CREATED, LAST_CHANGED, LAST_CHECKED, LAST_ERRORFREE, VIEWED, TAGS, ICON_NUMBER ) 
+values('TestProg',3,42,3,'<block_set xmlns="http://de.fhg.iais.roberta.blockly"><instance x="370" y="50"><block type="robControls_start" id="149" intask="true" deletable="false"><mutation declare="false"></mutation></block><block type="robActions_motorDiff_on" id="168" inline="false" intask="true"><field name="DIRECTION">FOREWARD</field><value name="POWER"><block type="math_number" id="169" intask="true"><field name="NUM">30</field></block></value></block><block type="robControls_wait_for" id="189" inline="false" intask="true"><value name="WAIT0"><block type="logic_compare" id="190" inline="true" intask="true"><mutation operator_range="COLOUR"></mutation><field name="OP">EQ</field><value name="A"><block type="sim_getSample" id="191" intask="true" deletable="false" movable="false"><mutation input="COLOUR_COLOUR"></mutation><field name="SENSORTYPE">COLOUR_COLOUR</field><field name="SENSORPORT">3</field></block></value><value name="B"><block type="robColour_picker" id="197" intask="true"><field name="COLOUR">#000000</field></block></value></block></value></block></instance></block_set>', 
+now, now, now, now, 
+0,'', 0 
+)
+2022-06-07 23:56:48,310 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 1
+2022-06-07 23:56:48,311 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - UPD: commit
+2022-06-07 23:56:48,312 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - rows affected: 0
+2022-06-07 23:56:48,312 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.i.r.persistence.util.DbExecutor - 10 SQL-statements executed
+2022-06-07 23:56:48,314 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+Jun 07, 2022 11:56:48 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit start
+Jun 07, 2022 11:56:48 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit end
+Jun 07, 2022 11:56:48 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+2022-06-09 13:22:10,539 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.iais.roberta.main.Administration - *** create-empty-db ***
+2022-06-09 13:22:10,756 [main] session-id=[] user-id=[] robot-name=[] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.dom4j.io.SAXContentHandler (file:/home/godfrey2712/openroberta-lab/OpenRobertaServer/target/resources/dom4j-1.6.1.jar) to method com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$LocatorProxy.getEncoding()
+WARNING: Please consider reporting this to the maintainers of org.dom4j.io.SAXContentHandler
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 09, 2022 1:22:11 PM com.mchange.v2.log.MLog <clinit>
+INFO: MLog clients using java 1.4+ standard logging.
+Jun 09, 2022 1:22:11 PM com.mchange.v2.c3p0.C3P0Registry banner
+INFO: Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+Jun 09, 2022 1:22:12 PM com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource getPoolManager
+INFO: Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@e1ff71ea [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@e72d8008 [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> true, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kfsxapk3c0a11dgpyd5|436c81a3, idleConnectionTestPeriod -> 300, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 700, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 200, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@2f6dd0f3 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kfsxapk3c0a11dgpyd5|97e93f1, jdbcUrl -> jdbc:hsqldb:file:./OpenRobertaServer/db-embedded/openroberta-db, properties -> {password=******, autocommit=false, user=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 1, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kfsxapk3c0a11dgpyd5|6cc558c6, numHelperThreads -> 3 ]
+Jun 09, 2022 1:22:12 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache open start
+Jun 09, 2022 1:22:12 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache open end
+2022-06-09 13:22:13,284 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.i.r.p.util.SessionFactoryWrapper - session factory successfully created for dbUrl: jdbc:hsqldb:file:./OpenRobertaServer/db-embedded/openroberta-db - now checking database upgrade
+2022-06-09 13:22:13,421 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-06-09 13:22:13,428 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 0
+2022-06-09 13:22:13,430 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-06-09 13:22:13,436 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-06-09 13:22:13,441 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-06-09 13:22:13,442 [main] session-id=[] user-id=[] robot-name=[] ERROR d.f.i.r.persistence.util.DbUpgrader - no error: no db upgrades needed
+2022-06-09 13:22:13,447 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+Jun 09, 2022 1:22:13 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit start
+Jun 09, 2022 1:22:13 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit end
+Jun 09, 2022 1:22:13 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+2022-06-09 14:36:36,139 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.iais.roberta.main.Administration - *** create-empty-db ***
+2022-06-09 14:36:36,366 [main] session-id=[] user-id=[] robot-name=[] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.dom4j.io.SAXContentHandler (file:/home/godfrey2712/openroberta-lab/OpenRobertaServer/target/resources/dom4j-1.6.1.jar) to method com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$LocatorProxy.getEncoding()
+WARNING: Please consider reporting this to the maintainers of org.dom4j.io.SAXContentHandler
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 09, 2022 2:36:36 PM com.mchange.v2.log.MLog <clinit>
+INFO: MLog clients using java 1.4+ standard logging.
+Jun 09, 2022 2:36:37 PM com.mchange.v2.c3p0.C3P0Registry banner
+INFO: Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+Jun 09, 2022 2:36:37 PM com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource getPoolManager
+INFO: Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@8560050d [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@8a8e132b [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> true, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kfsxapk5zpz81xvfj5l|436c81a3, idleConnectionTestPeriod -> 300, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 700, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 200, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@1beccd70 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kfsxapk5zpz81xvfj5l|97e93f1, jdbcUrl -> jdbc:hsqldb:file:./OpenRobertaServer/db-embedded/openroberta-db, properties -> {password=******, autocommit=false, user=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 1, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kfsxapk5zpz81xvfj5l|6cc558c6, numHelperThreads -> 3 ]
+Jun 09, 2022 2:36:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache open start
+Jun 09, 2022 2:36:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache open end
+Jun 09, 2022 2:36:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose start
+Jun 09, 2022 2:36:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose synched
+Jun 09, 2022 2:36:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose script done
+Jun 09, 2022 2:36:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit start
+Jun 09, 2022 2:36:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit end
+Jun 09, 2022 2:36:38 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose end
+2022-06-09 14:36:39,125 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.i.r.p.util.SessionFactoryWrapper - session factory successfully created for dbUrl: jdbc:hsqldb:file:./OpenRobertaServer/db-embedded/openroberta-db - now checking database upgrade
+2022-06-09 14:36:39,248 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-06-09 14:36:39,256 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 0
+2022-06-09 14:36:39,258 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-06-09 14:36:39,266 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-06-09 14:36:39,271 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-06-09 14:36:39,272 [main] session-id=[] user-id=[] robot-name=[] ERROR d.f.i.r.persistence.util.DbUpgrader - no error: no db upgrades needed
+2022-06-09 14:36:39,277 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+Jun 09, 2022 2:36:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit start
+Jun 09, 2022 2:36:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit end
+Jun 09, 2022 2:36:39 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+2022-07-08 15:53:55,312 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.iais.roberta.main.Administration - *** create-empty-db ***
+2022-07-08 15:53:55,379 [main] session-id=[] user-id=[] robot-name=[] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.dom4j.io.SAXContentHandler (file:/home/godfrey2712/openroberta-lab/OpenRobertaServer/target/resources/dom4j-1.6.1.jar) to method com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$LocatorProxy.getEncoding()
+WARNING: Please consider reporting this to the maintainers of org.dom4j.io.SAXContentHandler
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jul 08, 2022 3:53:55 PM com.mchange.v2.log.MLog <clinit>
+INFO: MLog clients using java 1.4+ standard logging.
+Jul 08, 2022 3:53:55 PM com.mchange.v2.c3p0.C3P0Registry banner
+INFO: Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+Jul 08, 2022 3:53:55 PM com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource getPoolManager
+INFO: Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@addc9a35 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@b30aa853 [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> true, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kfsxap1poiueh10mfp23|436c81a3, idleConnectionTestPeriod -> 300, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 700, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 200, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@474f348 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kfsxap1poiueh10mfp23|97e93f1, jdbcUrl -> jdbc:hsqldb:file:./OpenRobertaServer/db-embedded/openroberta-db, properties -> {password=******, autocommit=false, user=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 1, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kfsxap1poiueh10mfp23|6cc558c6, numHelperThreads -> 3 ]
+Jul 08, 2022 3:53:56 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache open start
+Jul 08, 2022 3:53:56 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache open end
+2022-07-08 15:53:56,787 [main] session-id=[] user-id=[] robot-name=[] INFO d.f.i.r.p.util.SessionFactoryWrapper - session factory successfully created for dbUrl: jdbc:hsqldb:file:./OpenRobertaServer/db-embedded/openroberta-db - now checking database upgrade
+2022-07-08 15:53:56,893 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-07-08 15:53:56,903 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 0
+2022-07-08 15:53:56,906 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-07-08 15:53:56,912 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-07-08 15:53:56,918 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+2022-07-08 15:53:56,919 [main] session-id=[] user-id=[] robot-name=[] ERROR d.f.i.r.persistence.util.DbUpgrader - no error: no db upgrades needed
+2022-07-08 15:53:56,925 [main] session-id=[] user-id=[] robot-name=[] DEBUG d.f.i.r.persistence.util.DbExecutor - 1
+Jul 08, 2022 3:53:57 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit start
+Jul 08, 2022 3:53:57 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache commit end
+Jul 08, 2022 3:53:57 PM org.hsqldb.persist.Logger logInfoEvent
+INFO: Database closed
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration
+Error: Could not find or load main class de.fhg.iais.roberta.main.Administration
+Caused by: java.lang.ClassNotFoundException: de.fhg.iais.roberta.main.Administration

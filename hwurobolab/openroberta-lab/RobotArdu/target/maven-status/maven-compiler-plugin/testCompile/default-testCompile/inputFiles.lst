@@ -1,0 +1,6 @@
+/root/openroberta-lab/RobotArdu/src/test/java/de/fhg/iais/roberta/ArduinoConfigCompTest.java
+/root/openroberta-lab/RobotArdu/src/test/java/de/fhg/iais/roberta/visitor/WorkflowTestHelper.java
+/root/openroberta-lab/RobotArdu/src/test/java/de/fhg/iais/roberta/visitor/ArduinoValidatorAndCollectorWorkflowTest.java
+/root/openroberta-lab/RobotArdu/src/test/java/de/fhg/iais/roberta/FestoConfigCompTest.java
+/root/openroberta-lab/RobotArdu/src/test/java/de/fhg/iais/roberta/ArduinoUsedHardwareCollectorVisitorTest.java
+/root/openroberta-lab/RobotArdu/src/test/java/de/fhg/iais/roberta/SenseboxConfigCompTest.java

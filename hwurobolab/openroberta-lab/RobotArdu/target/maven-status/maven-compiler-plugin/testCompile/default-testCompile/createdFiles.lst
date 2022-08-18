@@ -1,0 +1,6 @@
+de/fhg/iais/roberta/visitor/WorkflowTestHelper.class
+de/fhg/iais/roberta/ArduinoConfigCompTest.class
+de/fhg/iais/roberta/SenseboxConfigCompTest.class
+de/fhg/iais/roberta/FestoConfigCompTest.class
+de/fhg/iais/roberta/ArduinoUsedHardwareCollectorVisitorTest.class
+de/fhg/iais/roberta/visitor/ArduinoValidatorAndCollectorWorkflowTest.class

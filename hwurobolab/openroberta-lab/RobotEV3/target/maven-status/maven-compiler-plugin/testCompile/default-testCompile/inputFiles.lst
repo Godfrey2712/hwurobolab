@@ -1,0 +1,12 @@
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/components/ev3c4ev3/RbfBuilderTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/TypecheckTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/factory/generic/IndexLocationTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/components/ev3c4ev3/Uf2FileContainerTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/Ev3C4ev3AstTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/usedhardwarecheck/ProgramConfigurationCompatabilityTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/Ev3LejosAstTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/usedhardwarecheck/EV3ProgramUsedHardwareCheckTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/Ev3AstTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/Ev3DevAstTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/factory/generic/RobotModeFactoryTest.java
+/root/openroberta-lab/RobotEV3/src/test/java/de/fhg/iais/roberta/components/ev3c4ev3/ResourceUtils.java

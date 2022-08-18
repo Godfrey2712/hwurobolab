@@ -1,0 +1,10 @@
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/visitor/EdisonMethods.java
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/visitor/codegen/EdisonPythonVisitor.java
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/worker/compile/EdisonCompilerWorker.java
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/syntax/actors/edison/ReceiveIRAction.java
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/worker/codegen/EdisonPythonGeneratorWorker.java
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/syntax/actors/edison/SendIRAction.java
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/worker/validate/EdisonValidatorAndCollectorWorker.java
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/syntax/sensors/edison/ResetSensor.java
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/visitor/IEdisonVisitor.java
+/root/openroberta-lab/RobotEdison/src/main/java/de/fhg/iais/roberta/visitor/validate/EdisonValidatorAndCollectorVisitor.java
