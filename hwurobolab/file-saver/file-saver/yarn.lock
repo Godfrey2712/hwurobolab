@@ -486,9 +486,9 @@ helmet@^5.1.0:
   version "5.1.1"
   resolved "https://registry.npmjs.org/helmet/-/helmet-5.1.1.tgz"
 
-http-cache-semantics@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz"
+http-cache-semantics@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npmjs.org/http-cache-semantics/-/http-cache-semantics-4.1.1.tgz"
 
 http-errors@2.0.0:
   version "2.0.0"
