@@ -855,9 +855,9 @@ semver@^6.0.0, semver@^6.2.0, semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.npmjs.org/semver/-/semver-6.3.0.tgz"
 
-semver@^7.3.4:
-  version "7.3.5"
-  resolved "https://registry.npmjs.org/semver/-/semver-7.3.5.tgz"
+semver@^7.5.2:
+  version "7.5.2"
+  resolved "https://registry.npmjs.org/semver/-/semver-7.5.2.tgz"
   dependencies:
     lru-cache "^6.0.0"
 
