@@ -33,3 +33,5 @@ The node js server is started by:
 1.	Get into the file-saver path
 2.	Write the command “$npm run”
 3.	The server starts and is listening at a port of 500 to the API in the Application
+
+See Implementation Here: https://www.researchgate.net/publication/365231218_Cloud_Based_Robotics_Platform_for_Outreach_Activities
